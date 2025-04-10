@@ -12,24 +12,32 @@
 </head>
 
 <body>
-  <p class="wrong-moves">Wrong moves : <span id="wrong-moves">0/5</span></p>
+  <p class="wrong-moves">wrong moves _  <span id="wrong-moves">0/5</span></p>
+  <button id="quit">Q</button>
   <div id="container"></div>
   
   <div id="start-dialog">
-    <h3 id="status-info">Memory Game</h3>
+    <h3 id="status-info">click "start" to play!</h3>
     <hr />
     <p>Select the number of cards.</p>
-    <select  id="number-of-cards">
+    <select id="number-of-cards">
       <option value="4">4 CARDS</option>
       <option value="8">8 CARDS</option>
       <option value="12">12 CARDS</option>
       <option value="16">16 CARDS</option>
+      <option value="20">20 CARDS</option>
+      <option value="24">24 CARDS</option>
     </select>
-    <button id="start-game-btn">start game</button>
+    <button id="start-game-btn">start</button>
   </div>
-  <footer>
-    <p>&copy;Made by simon makau</p>
-  </footer>
+  <div id="welcome-screen">
+    <h3>Memory</h3>
+    <h2>Game</h2>
+    <div id="loading-bar">
+      <p>loading ....</p>
+      <progress id="bar" value="0" max="100"></progress>
+    </div>
+  </div>
   <script src="main.js"></script>
 </body>
 

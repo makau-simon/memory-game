@@ -41,7 +41,6 @@ body {
   height: auto;
   background: #fff;
   border-radius: 2px;
-  border: 1px solid #42445A;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -91,17 +90,6 @@ body {
   opacity: .6;
 }
 
-footer {
-  width: 100%;
-  font-size: 16px;
-  color: #42445A;
-  font-family: sans-serif;
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  background: rgba(0, 0, 0, .1);
-}
-
 .hide {
   visibility: hidden;
 }
@@ -116,4 +104,53 @@ footer {
   background: #4caf50;
   color: white;
   pointer-events: none;
+}
+
+#welcome-screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+#welcome-screen h3 {
+  font-size: 40px;
+  color: #42445A;
+  font-family: sans-serif;
+}
+
+#welcome-screen h2 {
+  color: #42445A;
+  font-family: sans-serif;
+}
+
+#loading-bar {
+  margin: 200px auto;
+}
+
+#loading-bar p {
+  font-family: sans-serif;
+  color: #42445A;
+}
+
+#quit {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  outline: none;
+  background: #42445A;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+#quit:active {
+  opacity: .6;
 }
