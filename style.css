@@ -1,0 +1,119 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-size: 15pt;
+}
+
+.wrong-moves {
+  font-family: sans-serif;
+  color: #42445A;
+  padding: 5px;
+}
+
+#container {
+  padding-left: 7px;
+  margin: 0 auto;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(4, 80px);
+}
+
+.tile {
+  height: 80px;
+  width: 80px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: sans-serif;
+  border: 1px solid #42445A;
+  border-radius: 10px;
+  color: #42445A;
+}
+
+#start-dialog {
+  padding: 20px;
+  width: 200px;
+  height: auto;
+  background: #fff;
+  border-radius: 2px;
+  border: 1px solid #42445A;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+#start-dialog h3 {
+  font-family: sans-serif;
+  color: #42445A;
+  font-size: 30px;
+}
+
+#start-dialog hr {
+  height: 1px;
+  border: 0;
+  background: #fff;
+}
+
+#start-dialog select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #42445A;
+  outline: none;
+  color: #42445A;
+  background: #fff;
+}
+
+#start-dialog p {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #42445A;
+}
+
+#start-game-btn {
+  width: 100%;
+  font-size: 18px;
+  font-family: sans-serif;
+  margin-top: 30px;
+  padding: 10px;
+  outline: none;
+  border: 0;
+  color: #fff;
+  background: #42445A;
+}
+
+#start-game-btn:active {
+  opacity: .6;
+}
+
+footer {
+  width: 100%;
+  font-size: 16px;
+  color: #42445A;
+  font-family: sans-serif;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  background: rgba(0, 0, 0, .1);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.tile.hidden {
+  background: #444;
+  color: transparent;
+  cursor: pointer;
+}
+
+.tile.correct {
+  background: #4caf50;
+  color: white;
+  pointer-events: none;
+}
