@@ -4,47 +4,72 @@ body {
   margin: 0;
   padding: 0;
   font-size: 15pt;
+  user-select: none;
+  background: url('assets/images/background.jpg');
+  background-size: cover;
+  object-fit: cover;
 }
 
 .wrong-moves {
   font-family: sans-serif;
-  color: #42445A;
-  padding: 5px;
+  color: #ccc;
+  font-size: 17px;
 }
 
 #container {
-  padding-left: 7px;
-  margin: 0 auto;
+  gap: 10px;
   display: grid;
-  gap: 6px;
   grid-template-columns: repeat(4, 80px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+#game-info {
+  padding: 8px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, .09);
+  backdrop-filter: blur(1px);
+}
+
+#timer {
+  font-weight: 700;
+  color: #ccc;
+  font-family: sans-serif;
 }
 
 .tile {
-  height: 80px;
-  width: 80px;
-  background: #fff;
+  height: 55px;
+  width: 55px;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 30px;
-  font-weight: 900;
+  font-weight: 500;
+  border-radius: 2px;
   font-family: sans-serif;
-  border: 1px solid #42445A;
-  border-radius: 10px;
-  color: #42445A;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  color: #fff;
 }
 
 #start-dialog {
-  padding: 20px;
-  width: 200px;
-  height: auto;
+  width: 100vw;
+  height: 100vh;
   background: #fff;
   border-radius: 2px;
   position: absolute;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
+  background: url('assets/images/background.jpg');
+  background-size: cover;
+  
 }
 
 #start-dialog h3 {
@@ -104,6 +129,7 @@ body {
   background: #4caf50;
   color: white;
   pointer-events: none;
+  transform: scale(0);
 }
 
 #welcome-screen {
@@ -112,20 +138,28 @@ body {
   width: 100vw;
   top: 0;
   left: 0;
-  background: #fff;
+  background: url("/assets/images/background.jpg");
+  object-fit: cover;
   text-align: center;
   z-index: 1;
+  background-size: cover;
 }
 
 #welcome-screen h3 {
+  font-weight: 800;
   font-size: 40px;
-  color: #42445A;
-  font-family: sans-serif;
+  color: #2a8d30;
+  font-family: casual;
+  letter-spacing: 5px;
+  text-shadow: 0px 1px #ccc;
 }
 
 #welcome-screen h2 {
-  color: #42445A;
-  font-family: sans-serif;
+  color: #ccc;
+  font-weight: 800;
+  font-family: casual;
+  letter-spacing: 5px;
+  text-shadow: 0px 1px #2a8d30;
 }
 
 #loading-bar {
@@ -134,7 +168,8 @@ body {
 
 #loading-bar p {
   font-family: sans-serif;
-  color: #42445A;
+  color: #ccc;
+  letter-spacing: 3px;
 }
 
 #quit {
@@ -142,15 +177,155 @@ body {
   height: 40px;
   border: 0;
   outline: none;
-  background: #42445A;
-  color: #fff;
-  font-size: 20px;
-  border-radius: 50%;
-  position: absolute;
-  top: 15px;
-  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
 }
 
 #quit:active {
+  opacity: .6;
+}
+
+#levels-container {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  gap: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.btn-level {
+  width: 120px;
+  height: 120px;
+  color: #fff;
+  font-size: 20px;
+  border: 0;
+  text-align: center;
+  border-radius: 10px;
+  font-family: casual;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .4);
+  font-weight: 700;
+}
+
+.locked {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.unlocked {
+  background-color: #2a8d30;
+  color: white;
+}
+
+.level:active {
+  background: #42445A;
+  color: #fff;
+}
+
+.diamonds {
+  font-family: sans-serif;
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.diamonds-levels {
+  padding: 10px;
+}
+
+#show-game-info {
+  padding: 15px;
+  border: 0;
+  width: 200px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+#show-game-info h3 {
+  color: #42445A;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#show-game-info p {
+  font-size: 17px;
+  color: #42445A;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#display-score {
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: #42445A;
+  font-family: sans-serif;
+}
+
+#show-game-info .buttons {
+  width: 85%;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#show-game-info .buttons button {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #42445A;
+  color: #42445A;
+  padding: 10px;
+  outline: none;
+  font-family: sans-serif;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+#show-game-info .buttons button:active {
+  background: #ccc;
+}
+
+.other {
+  visibility: hidden;
+}
+
+#not-enough-coins {
+  border: 0;
+  padding: 20px;
+  height: 150px;
+  width: 60%;
+  border-radius: 5px;
+}
+
+#not-enough-coins div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#not-enough-coins h3 {
+  color: #42445A;
+  font-size: 18px;
+}
+
+#not-enough-coins button {
+  padding: 10px;
+  width: 100%;
+  outline: none;
+  border: 0;
+  font-size: 20px;
+  color: #fff;
+  background: #555;
+  border-radius: 3px;
+}
+
+#not-enough-coins button:active {
   opacity: .6;
 }
